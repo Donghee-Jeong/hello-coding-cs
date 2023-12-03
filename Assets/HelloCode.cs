@@ -5,17 +5,18 @@ public class HelloCode : MonoBehaviour
 {
     private void Start()
     {
-        // 캐릭터의 프로필을 변수로 만들기
-        string characterName = "라라";
-        char bloodType = 'A';
-        int age = 17;
-        float height = 168.3f;
-        bool isFemale = true;
+        float distance = GetDistance(2, 2, 5, 6);
+        Debug.Log("(2,2)에서 (5,6)까지의 거리 : " + distance);
+    }
 
-        Debug.Log("캐릭터 이름 : " + characterName);
-        Debug.Log("혈액형 : " + bloodType);
-        Debug.Log("나이 : " + age);
-        Debug.Log("키 : " + height);
-        Debug.Log("여성인가? : " + isFemale);
+    private float GetDistance(int x1, int y1, int x2, int y2)
+    {
+        float width = x2 - x1;
+        float height = y2 - y1;
+
+        float distance = width * width + height + height;
+        distance = Mathf.Sqrt(distance);
+
+        return distance;
     }
 }
